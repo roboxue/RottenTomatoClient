@@ -52,7 +52,13 @@ extension MovieListViewController: UITableViewDataSource {
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = RTMovieCell(style: .Value1, reuseIdentifier: nil)
+        let reuseId = "movie"
+        let cell: RTMovieCell!
+        if let reuseCell = tableView.dequeueReusableCellWithIdentifier(reuseId) as? RTMovieCell {
+            cell = reuseCell
+        } else {
+            cell = RTMovieCell(style: .Value1, reuseIdentifier: "movie")
+        }
         let movie = _movies[indexPath.row]
         cell.withMovie(movie)
         return cell

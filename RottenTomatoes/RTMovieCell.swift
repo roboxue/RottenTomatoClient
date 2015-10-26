@@ -16,8 +16,12 @@ class RTMovieCell: UITableViewCell {
     private var _mpaaRatingLabel: UILabel!
     
     func withMovie(movie: JSON) {
-        let picUrl = RottenTomatoDataSource.getPicUrl(movie[RTPosters][RTThumbnail].stringValue, highResolution: false)
-        thumbnailView.af_setImageWithURL(NSURL(string: picUrl)!)
+        let thumbnailUrl = RottenTomatoDataSource.getPicUrl(movie[RTPosters][RTThumbnail].stringValue, highResolution: false)
+        let originUrl = RottenTomatoDataSource.getPicUrl(movie[RTPosters][RTThumbnail].stringValue, highResolution: true)
+        debugPrint(thumbnailUrl)
+        thumbnailView.af_setImageWithURL(NSURL(string: thumbnailUrl)!, placeholderImage: RTPlaceholderImage, filter: nil, imageTransition: .None) { (response) -> Void in
+            self.thumbnailView.af_setImageWithURL(NSURL(string: originUrl)!)
+        }
         titleLabel.text = movie[RTTitle].stringValue
         let mpaaRating = movie[RTMPAARating].stringValue
         let synopsis = movie[RTSynopsis].stringValue
@@ -49,7 +53,7 @@ extension RTMovieCell {
             label.font = RTTitleFont
             addSubview(label)
             label.snp_remakeConstraints(closure: { (make) -> Void in
-                make.left.equalTo(thumbnailView.snp_right)
+                make.left.equalTo(thumbnailView.snp_right).offset(RTSpan)
                 make.top.equalTo(self).offset(RTSpan)
                 make.height.equalTo(21)
             })
@@ -63,10 +67,10 @@ extension RTMovieCell {
             let label = UILabel()
             addSubview(label)
             label.numberOfLines = 0
-            label.lineBreakMode = .ByWordWrapping
+            label.lineBreakMode = .ByTruncatingTail
             label.adjustsFontSizeToFitWidth = false
             label.snp_remakeConstraints(closure: { (make) -> Void in
-                make.left.equalTo(thumbnailView.snp_right)
+                make.left.equalTo(thumbnailView.snp_right).offset(RTSpan)
                 make.top.equalTo(titleLabel.snp_bottom).offset(2 * RTSpan)
                 make.right.equalTo(self).offset(-RTSpan)
                 make.bottom.equalTo(self).offset(-RTSpan)
