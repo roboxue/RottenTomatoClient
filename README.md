@@ -1,6 +1,6 @@
-# Project 1 - *Name of App Here*
+# Project 1 - **RottenTomatoClient** 
 
-**Name of your app** is a movies app displaying box office and top rental DVDs using the [Rotten Tomatoes API](http://developer.rottentomatoes.com/docs/read/JSON).
+**RottenTomatoClient** is a movies app displaying box office and top rental DVDs using the [Rotten Tomatoes API](http://developer.rottentomatoes.com/docs/read/JSON).
 
 Time spent: **2** hours spent in total
 
