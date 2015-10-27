@@ -1,3 +1,4 @@
+
 //
 //  AppDelegate.swift
 //  RottenTomatoes
@@ -18,7 +19,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
         window = UIWindow(frame: UIScreen.mainScreen().bounds)
-        window!.backgroundColor = UIColor.whiteColor()
+        window!.backgroundColor = RTBackgroundColor
+        window!.tintColor = RTTintColor
         window!.rootViewController = UINavigationController(rootViewController: MovieListViewController())
         window!.makeKeyAndVisible()
         return true

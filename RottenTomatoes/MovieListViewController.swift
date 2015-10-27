@@ -65,11 +65,21 @@ extension MovieListViewController: UITableViewDataSource {
     }
 }
 
+extension MovieListViewController: UITableViewDelegate {
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+        let movieVC = MovieViewController()
+        movieVC.movie = _movies[indexPath.row]
+        navigationController?.pushViewController(movieVC, animated: true)
+    }
+}
+
 extension MovieListViewController {
     var tableView: UITableView {
         if _tableView == nil {
             _tableView = UITableView(frame: CGRectZero, style: UITableViewStyle.Plain)
             _tableView.dataSource = self
+            _tableView.delegate = self
             _tableView.tableFooterView = UIView()
             _tableView.rowHeight = CGFloat(RTMovieCellHeight)
         }

@@ -16,6 +16,7 @@ class RTMovieCell: UITableViewCell {
     private var _mpaaRatingLabel: UILabel!
     
     func withMovie(movie: JSON) {
+        backgroundColor = RTBackgroundColor
         let thumbnailUrl = RottenTomatoDataSource.getPicUrl(movie[RTPosters][RTThumbnail].stringValue, highResolution: false)
         let originUrl = RottenTomatoDataSource.getPicUrl(movie[RTPosters][RTThumbnail].stringValue, highResolution: true)
         debugPrint(thumbnailUrl)
@@ -57,6 +58,7 @@ extension RTMovieCell {
                 make.top.equalTo(self).offset(RTSpan)
                 make.height.equalTo(21)
             })
+            label.textColor = RTPrimaryTextColor
             _titleLabel = label
         }
         return _titleLabel
@@ -75,6 +77,7 @@ extension RTMovieCell {
                 make.right.equalTo(self).offset(-RTSpan)
                 make.bottom.equalTo(self).offset(-RTSpan)
             })
+            label.textColor = RTPrimaryTextColor
             _mpaaRatingLabel = label
         }
         return _mpaaRatingLabel
