@@ -20,7 +20,7 @@ The following **optional** features are implemented:
 - [ ] Implement segmented control to switch between list view and grid view.
 - [ ] Add a search bar.
 - [ ] All images fade in.
-- [ ] For the large poster, load the low-res image first, switch to high-res when complete.
+- [\*] For the large poster, load the low-res image first, switch to high-res when complete.
 - [ ] Customize the highlight and selection effect of the cell.
 - [ ] Customize the navigation bar.
 
@@ -32,7 +32,7 @@ The following **additional** features are implemented:
 
 Here's a walkthrough of implemented user stories:
 
-<img src='http://i.imgur.com/link/to/your/gif/file.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+![Video Walkthrough](WalkThrough.gif)
 
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
