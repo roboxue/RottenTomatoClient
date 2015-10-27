@@ -12,6 +12,7 @@ import SwiftyJSON
 class MovieListViewController: UIViewController {
     private var _tableView: UITableView!
     private var _movies = [JSON]()
+    private var _refreshControl: GearRefreshControl!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,6 +24,7 @@ class MovieListViewController: UIViewController {
             make.right.equalTo(view)
             make.bottom.equalTo(snp_bottomLayoutGuideTop)
         }
+        tableView.addSubview(refreshControl)
         title = "Movies"
     }
     
@@ -33,12 +35,20 @@ class MovieListViewController: UIViewController {
     
     func refresh() {
         RTDataSource.getBoxOffice({ (movies) -> Void in
+            self.refreshControl.endRefreshing()
             self._movies = movies
             self.tableView.reloadData()
         }) { (error) -> Void in
+            self.refreshControl.endRefreshing()
             self._movies = [JSON]()
             self.tableView.reloadData()
         }
+    }
+}
+
+extension MovieListViewController: UIScrollViewDelegate {
+    func scrollViewDidScroll(scrollView: UIScrollView) {
+        refreshControl.scrollViewDidScroll(scrollView)
     }
 }
 
@@ -84,5 +94,15 @@ extension MovieListViewController {
             _tableView.rowHeight = CGFloat(RTMovieCellHeight)
         }
         return _tableView
+    }
+    
+    var refreshControl: GearRefreshControl {
+        get {
+            if _refreshControl == nil {
+                _refreshControl = GearRefreshControl(frame: self.view.bounds)
+                _refreshControl.addTarget(self, action: "refresh", forControlEvents: UIControlEvents.ValueChanged)
+            }
+            return _refreshControl
+        }
     }
 }

@@ -9,10 +9,10 @@ Time spent: **2** hours spent in total
 The following **required** functionality is completed:
 
 - [\*] User can view a list of movies. Poster images load asynchronously.
-- [ ] User can view movie details by tapping on a cell.
+- [\*] User can view movie details by tapping on a cell.
 - [\*] User sees loading state while waiting for the API.
-- [ ] User sees error message when there is a network error.
-- [ ] User can pull to refresh the movie list.
+- [\*] User sees error message when there is a network error.
+- [\*] User can pull to refresh the movie list.
 
 The following **optional** features are implemented:
 

@@ -15,6 +15,7 @@
 		A17FE93E1BDDE35B00B4EB4D /* RTConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A17FE93D1BDDE35B00B4EB4D /* RTConstants.swift */; };
 		A17FE9401BDDE38D00B4EB4D /* RTMovieCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A17FE93F1BDDE38D00B4EB4D /* RTMovieCell.swift */; };
 		A1D73EA31BDF1DF600708433 /* MovieViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1D73EA21BDF1DF600708433 /* MovieViewController.swift */; };
+		A1D73EA51BDF39F900708433 /* GearRefreshControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1D73EA41BDF39F900708433 /* GearRefreshControl.swift */; };
 		C0D4D03CDBF34974FD597954 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D18F2A07247F16CBC3224CE /* Pods.framework */; };
 /* End PBXBuildFile section */
 
@@ -31,6 +32,7 @@
 		A17FE93D1BDDE35B00B4EB4D /* RTConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RTConstants.swift; sourceTree = "<group>"; };
 		A17FE93F1BDDE38D00B4EB4D /* RTMovieCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RTMovieCell.swift; sourceTree = "<group>"; };
 		A1D73EA21BDF1DF600708433 /* MovieViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieViewController.swift; sourceTree = "<group>"; };
+		A1D73EA41BDF39F900708433 /* GearRefreshControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GearRefreshControl.swift; sourceTree = "<group>"; };
 		AA2BEA033EF552F5A1FCD94E /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -84,6 +86,7 @@
 				A1073B331BDD540F00300123 /* Info.plist */,
 				A17FE93D1BDDE35B00B4EB4D /* RTConstants.swift */,
 				A17FE93F1BDDE38D00B4EB4D /* RTMovieCell.swift */,
+				A1D73EA41BDF39F900708433 /* GearRefreshControl.swift */,
 			);
 			path = RottenTomatoes;
 			sourceTree = "<group>";
@@ -231,6 +234,7 @@
 				A17FE9391BDDDC0B00B4EB4D /* RottenTomatoDataSource.swift in Sources */,
 				A17FE93E1BDDE35B00B4EB4D /* RTConstants.swift in Sources */,
 				A17FE9401BDDE38D00B4EB4D /* RTMovieCell.swift in Sources */,
+				A1D73EA51BDF39F900708433 /* GearRefreshControl.swift in Sources */,
 				A1D73EA31BDF1DF600708433 /* MovieViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
